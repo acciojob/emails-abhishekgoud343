@@ -34,11 +34,11 @@ public class Email {
         for (int i = 0; i < newPassword.length() && (count_upper < 1 || count_lower < 1 || count_digit < 1 || count_special < 1); ++i) {
             char ch = newPassword.charAt(i);
 
-            if (ch >= 65 && ch <= 90)
+            if (ch >= 'A' && ch <= 'Z')
                 ++count_upper;
-            else if (ch >= 97 && ch <= 122)
+            else if (ch >= 'a' && ch <= 'z')
                 ++count_lower;
-            else if (ch >= 48 && ch <= 57)
+            else if (ch >= '0' && ch <= '9')
                 ++count_digit;
             else
                 ++count_special;

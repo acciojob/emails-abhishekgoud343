@@ -4,8 +4,8 @@ import java.time.LocalTime;
 
 public class Meeting {
 
-    private LocalTime startTime;
-    private LocalTime endTime;
+    private final LocalTime startTime;
+    private final LocalTime endTime;
 
     public Meeting(LocalTime startTime, LocalTime endTime){
         this.startTime = startTime;
@@ -18,13 +18,5 @@ public class Meeting {
 
     public LocalTime getEndTime() {
         return endTime;
-    }
-
-        @Override
-    public String toString() {
-        return "Meeting{" +
-                "startTime=" + startTime +
-                ", endTime=" + endTime +
-                '}';
     }
 }
