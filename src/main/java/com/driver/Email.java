@@ -31,7 +31,7 @@ public class Email {
 
         int count_upper = 0, count_lower = 0, count_digit = 0, count_special = 0;
 
-        for (int i = 0; i < newPassword.length() && (count_upper < 1 && count_lower < 1 && count_digit < 1 && count_special < 1); ++i) {
+        for (int i = 0; i < newPassword.length() && (count_upper < 1 || count_lower < 1 || count_digit < 1 || count_special < 1); ++i) {
             char ch = newPassword.charAt(i);
 
             if (ch >= 65 && ch <= 90)

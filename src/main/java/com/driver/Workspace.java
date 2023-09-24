@@ -1,11 +1,6 @@
 package com.driver;
 
-import org.apache.commons.lang3.tuple.Pair;
-
-//import java.time.LocalTime;
-import java.time.Duration;
 import java.time.LocalTime;
-import java.time.temporal.ChronoUnit;
 import java.util.*;
 
 public class Workspace extends Gmail {
@@ -32,20 +27,17 @@ public class Workspace extends Gmail {
         if (calendar.isEmpty())
             return 0;
 
-        int count = 1;
-
         List<Meeting> temp = new ArrayList<>(calendar);
         temp.sort(Comparator.comparing(Meeting::getEndTime));
 
-        System.out.println(temp);
-
+        int count = 1;
         LocalTime lastEndtime = temp.get(0).getEndTime();
 
         for (int i = 1; i < temp.size(); ++i) {
-            Meeting a = temp.get(i);
-            if (a.getStartTime().isAfter(lastEndtime)) {
+            Meeting curr = temp.get(i);
+            if (curr.getStartTime().isAfter(lastEndtime)) {
                 ++count;
-                lastEndtime = a.getEndTime();
+                lastEndtime = curr.getEndTime();
             }
         }
 
