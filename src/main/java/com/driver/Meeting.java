@@ -3,6 +3,7 @@ package com.driver;
 import java.time.LocalTime;
 
 public class Meeting {
+
     private LocalTime startTime;
     private LocalTime endTime;
 
@@ -11,4 +12,19 @@ public class Meeting {
         this.endTime = endTime;
     }
 
+    public LocalTime getStartTime() {
+        return startTime;
+    }
+
+    public LocalTime getEndTime() {
+        return endTime;
+    }
+
+        @Override
+    public String toString() {
+        return "Meeting{" +
+                "startTime=" + startTime +
+                ", endTime=" + endTime +
+                '}';
+    }
 }
